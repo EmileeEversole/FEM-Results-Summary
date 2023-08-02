@@ -1,0 +1,289 @@
+/*
+=============== 
+Fonts
+===============
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+    /* primary colors */
+    --clr-red: hsl(0, 100%, 67%);
+    --clr-yellow: hsl(39, 100%, 56%);
+    --clr-green: hsl(166, 100%, 37%);
+    --clr-blue:hsl(234, 85%, 45%);
+
+    /* gradients */
+    --clr-bg-light-blue: hsl(252, 100%, 67%);
+    --clr-bg-dark-blue: hsl(241, 81%, 54%);
+
+    --clr-cir-light-blue: hsla(256, 72%, 46%, 1);
+    --clr-cir-clear-blue: hsla(241, 72%, 46%, 0);
+
+    /* neutrals */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-pale-blue: hsl(221, 100%, 96%);
+    --clr-light-lavender: hsl(241, 100%, 89%);
+    --clr-dark-gray-blue: hsl(224, 30%, 27%);
+
+    /* typography */
+    --font-primary: "Hanken Grotesk", sans-serif;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: var(--font-primary);
+    text-transform: capitalize;
+    width: 100vw;
+}
+body p {
+    font-size: 18px;
+}
+ul {
+    list-style: none;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(356, 100%, 78%); }
+/*
+=============== 
+Design
+===============
+*/
+body {
+    width: 100vw;
+    height: auto;
+    background-color: hsla(221, 100%, 96%, 0.5);
+}
+.wrapper {
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10vw auto;
+    background-color: var(--clr-white);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 10px 15px;
+}
+.result-container {
+    display: block;
+    width: 50%;
+    border-radius: 15px;
+    background: linear-gradient(180deg, var(--clr-bg-light-blue), var(--clr-bg-dark-blue));
+    color: var(--clr-white);
+    padding: 2vw; 
+}
+.summary-container {
+    display: block;
+    width: 50%;
+    padding: 2vw;
+    text-align: left;
+}
+.result {
+    background: linear-gradient(180deg, var(--clr-cir-light-blue), var(--clr-cir-clear-blue));
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    margin: 2vh auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.result-header {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--clr-light-lavender);
+    padding-bottom: 1rem;
+}
+.result h2 {
+    font-size: 50px;
+    font-weight: 800;
+}
+.result p {
+    font-size: 15px;
+    color: hsla(241, 100%, 89%, 0.75);
+    text-transform: none;
+}
+.result-text h3 {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 1rem;
+    letter-spacing: 1px;
+}
+.result-text h4 {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--clr-light-lavender);
+}
+.summary-header {
+    font-size: 20px;
+    color: var(--clr-dark-gray-blue);
+}
+.summary-groups li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-pale-blue);
+    margin: 1.25rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.summary-groups img {
+    padding-right: 0.5rem;
+}
+.result-summary {
+    display: flex;
+    align-items: center;
+}
+.result-number {
+    padding-right: 0.5rem;
+    font-weight: 800;
+    color: var(--clr-dark-gray-blue);
+    font-size: 18px;
+}
+.of-100 {
+    font-size: 15px;
+    font-weight: 800;
+    color: hsla(224, 30%, 27%, 0.5)
+}
+.reaction {
+    color: var(--clr-red);
+}
+.memory {
+    color: var(--clr-yellow);
+}
+.verbal {
+    color: var(--clr-green);
+}
+.visual {
+    color: var(--clr-blue);
+}
+.icon {
+    display: flex;
+    align-items: center;
+}
+.continue {
+    text-align: center;
+}
+.continue button {
+    width: 100%;
+    border-color: transparent;
+    border-radius: 50px;
+    background: linear-gradient(180deg, var(--clr-bg-light-blue), var(--clr-bg-dark-blue), var(--clr-dark-gray-blue), var(--clr-dark-gray-blue));
+    color: var(--clr-pale-blue);
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    transition: background-position 0.3s linear;
+    background-size: 100% 350%;
+    background-position: 0% 90%;
+}
+.continue button:hover {
+    cursor: pointer;
+    background: linear-gradient(180deg, var(--clr-bg-light-blue), var(--clr-bg-dark-blue));
+    background-position: 0, 0;
+    background-size: 100% 150%;
+}
+
+@media screen and (max-width:1100px) {
+    .result-summary {
+        display: block;
+    }
+    .result-number {
+        font-size: 15px;
+    }
+    .of-100 {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .wrapper
+     {
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+    }
+    .result-container {
+        width: 100%;
+        border-radius: 0 0 15px 15px;
+        padding: 1rem 1rem;
+    }
+    .summary-container {
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+    .result-summary {
+        display: flex;
+    }
+    .result-header {
+        font-size: 20px;
+        padding-bottom: 0.5rem;
+    }
+    .result {
+        height: 6rem;
+        width: 6rem;
+        margin: 1vw auto;
+    }
+    .result h2 {
+        font-size: 40px;
+    }
+    .result p {
+        font-size: 13px;
+    }
+    .result-text h3 {
+        font-size: 20px;
+        padding: 0.5rem;
+    }
+    .result-text h4 {
+        font-size: 15px;
+        padding-bottom: 1vw;
+    }
+    .summary-header {
+        font-size: 20px;
+    }
+    .of-100 {
+        font-size: 12px;
+    }
+    .result-number {
+        font-weight: 700;
+        color: var(--clr-dark-gray-blue);
+        font-size: 16px;
+    }
+    .continue button {
+        margin-top: 0.5rem;
+    }
+    .attribution {
+        margin-top: 1rem;
+    }
+    .icon {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .result-summary {
+        display: block;
+    }
+    .result-number {
+        font-size: 15px;
+    }
+    .of-100 {
+        font-size: 10px;
+    }
+    .icon {
+        font-size: 12px;
+    }
+}
